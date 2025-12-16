@@ -17,8 +17,8 @@ const ChatMessage = ({ content, timestamp, sender, status = "sent" }: ChatMessag
     <div className={cn("flex w-full gap-2 mb-4", isUser ? "justify-end" : "justify-start")}>
       {!isUser && (
         <Avatar className="h-8 w-8">
-          <AvatarImage src="/myPic.jpg" alt="Mwaki Denis" />
-          <AvatarFallback>ML</AvatarFallback>
+          <AvatarImage src="/20240814_132224.jpg" alt="DenisBot" />
+          <AvatarFallback>MD</AvatarFallback>
         </Avatar>
       )}
       
