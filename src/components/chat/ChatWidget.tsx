@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import ChatMessage, { ChatMessageProps } from "./ChatMessage";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -25,249 +25,7 @@ type ConversationStep = {
   gif?: string;
 };
 
-const CONVERSATION_STEPS: Record<string, ConversationStep> = {
-  start: {
-    id: "start",
-    messages: [
-      {
-        content: "Hello there! 👋",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content:
-          "I'm DenisBot, Mwaki Denis's personal AI assistant. Good to see you... uhmm",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "What's your name? 😅",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    inputRequired: true,
-    onInput: (name) => {
-      if (name.trim()) return "profile-created";
-      return null;
-    },
-  },
-
-  "profile-created": {
-    id: "profile-created",
-    messages: [
-      {
-        content: "Great to meet you! I hope you feel right at home. 🤗",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "So which mode shall we explore?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "Story Mode", nextId: "story-mode" },
-      { text: "Sandbox Mode", nextId: "sandbox-mode" },
-      { text: "Action Mode", nextId: "action-mode" },
-      { text: "Website Pricing", nextId: "pricing-mode" },
-      { text: "End Conversation", nextId: "end-conversation" },
-    ],
-  },
-
-  "story-mode": {
-    id: "story-mode",
-    messages: [
-      {
-        content: "What side of Mwaki's life would you like us to discuss?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "General Life ♻", nextId: "general-life" },
-      { text: "Professional Life ⬆", nextId: "professional-life" },
-      { text: "Romantic Life ❤", nextId: "romantic-life" },
-      { text: "Go Back ↩", nextId: "profile-created" },
-    ],
-  },
-
-  "romantic-life": {
-    id: "romantic-life",
-    messages: [],
-    gif: "/RomanticLaugh.gif",
-    options: [{ text: "Nice Try! 😄", nextId: "try-again" }],
-  },
-
-  "try-again": {
-    id: "try-again",
-    messages: [
-      {
-        content: "Okay you've had your fun, be serious now. 🧍🏿‍♀️",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "What side of Mwaki's life would you like us to discuss?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "General Life ♻", nextId: "general-life" },
-      { text: "Professional Life ⬆", nextId: "professional-life" },
-      { text: "Romantic Life ❤", nextId: "romantic-life" },
-      { text: "Go Back ↩", nextId: "profile-created" },
-    ],
-  },
-
-  "general-life": {
-    id: "general-life",
-    messages: [
-      {
-        content:
-          "Mwaki Denis is passionate about technology and innovation. Outside of work, he enjoys exploring new tech trends, contributing to open source projects, and sharing knowledge with the tech community.",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "Would you like to know more?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "Yes absolutely!", nextId: "general-life-more" },
-      { text: "No, That's enough", nextId: "story-mode" },
-    ],
-  },
-
-  "professional-life": {
-    id: "professional-life",
-    messages: [
-      {
-        content:
-          "Mwaki Denis is a passionate front-end developer with expertise in building responsive web applications. He practices various IT disciplines including UI/UX design, web development, and software development lifecycle management.",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "Would you like to know more?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "Yes absolutely!", nextId: "choose-tech" },
-      { text: "No, That's enough", nextId: "story-mode" },
-    ],
-  },
-
-  "choose-tech": {
-    id: "choose-tech",
-    messages: [
-      {
-        content: "That's the spirit!! 😎",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "What field would you like me to elaborate on?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "UI/UX Design", nextId: "uiux-design" },
-      { text: "Web Development", nextId: "web-development" },
-      { text: "SDLC Management", nextId: "sdlc-management" },
-      { text: "Go Back ↩", nextId: "story-mode" },
-    ],
-  },
-
-  /* ✅ FIXED BLOCK */
-  "web-development": {
-    id: "web-development",
-    messages: [
-      {
-        content: `Denis excels in web development with proficiency in React, TypeScript, and modern front-end frameworks. 
-He builds responsive, accessible, and performant web applications with clean, maintainable code. 
-His development approach emphasizes component-based architecture and efficient state management.`,
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-      {
-        content: "What aspect of web development would you like to know more about?",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [
-      { text: "Frontend Technologies", nextId: "frontend-tech" },
-      { text: "Development Philosophy", nextId: "dev-philosophy" },
-      { text: "Go Back ↩", nextId: "choose-tech" },
-    ],
-  },
-
-  "frontend-tech": {
-    id: "frontend-tech",
-    messages: [
-      {
-        content:
-          "Denis specializes in React.js with TypeScript, Tailwind CSS, Redux, and Zustand, focusing on scalable and maintainable front-end systems.",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [{ text: "Go Back ↩", nextId: "web-development" }],
-  },
-
-  "dev-philosophy": {
-    id: "dev-philosophy",
-    messages: [
-      {
-        content:
-          "Denis believes in writing clean, maintainable code that solves real-world problems with performance and accessibility in mind.",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [{ text: "Go Back ↩", nextId: "web-development" }],
-  },
-
-  "end-conversation": {
-    id: "end-conversation",
-    messages: [
-      {
-        content:
-          "Thank you for chatting! Feel free to reach out again anytime. 👋",
-        timestamp: new Date(),
-        sender: "admin",
-        status: "read",
-      },
-    ],
-    options: [{ text: "Start New Chat", nextId: "start" }],
-  },
-};
+// -- your existing CONVERSATION_STEPS --
 
 const ChatWidget = ({ isOpen, onClose }: ChatWidgetProps) => {
   const [messages, setMessages] = useState<ChatMessageProps[]>([]);
@@ -295,9 +53,26 @@ const ChatWidget = ({ isOpen, onClose }: ChatWidgetProps) => {
 
     setCurrentStep(nextId);
     if (step.messages) {
-      setMessages((prev) => [...prev, ...step.messages!]);
+      setMessages((prev) => [...prev, ...step.messages]);
     }
     setShowOptions(!!step.options && !step.inputRequired);
+  };
+
+  const handleInputSubmit = () => {
+    const step = CONVERSATION_STEPS[currentStep];
+    if (!step.inputRequired || !step.onInput) return;
+
+    const nextId = step.onInput(newMessage);
+    if (nextId) {
+      setMessages((prev) => [
+        ...prev,
+        { content: newMessage, timestamp: new Date(), sender: "user" },
+      ]);
+      setNewMessage("");
+      goToNextStep(nextId);
+    } else {
+      toast.error("Please enter a valid input");
+    }
   };
 
   return (
@@ -313,6 +88,20 @@ const ChatWidget = ({ isOpen, onClose }: ChatWidgetProps) => {
             {messages.map((m, i) => (
               <ChatMessage key={i} {...m} />
             ))}
+
+            {/* Input for text steps */}
+            {CONVERSATION_STEPS[currentStep].inputRequired && (
+              <div className="mt-2 flex gap-2">
+                <Input
+                  value={newMessage}
+                  onChange={(e) => setNewMessage(e.target.value)}
+                  placeholder="Type your answer..."
+                />
+                <Button onClick={handleInputSubmit}>Send</Button>
+              </div>
+            )}
+
+            {/* Options buttons */}
             {showOptions &&
               CONVERSATION_STEPS[currentStep].options?.map((o, i) => (
                 <Button
@@ -324,6 +113,7 @@ const ChatWidget = ({ isOpen, onClose }: ChatWidgetProps) => {
                   {o.text} <ArrowRight />
                 </Button>
               ))}
+
             <div ref={messagesEndRef} />
           </div>
         </div>
