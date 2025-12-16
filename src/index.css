@@ -1,0 +1,371 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 232 45% 98%;
+    --foreground: 248 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 248 40% 10%;
+
+    --popover: 232 45% 98%;
+    --popover-foreground: 248 40% 10%;
+
+    --primary: 260 84% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 60% 97%;
+    --secondary-foreground: 248 40% 10%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 225 23% 45%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 260 84% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 245 39% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 246 30% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 246 30% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 260 84% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 246 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 246 25% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 246 25% 20%;
+    --input: 246 25% 20%;
+    --ring: 260 84% 60%;
+
+    --sidebar-background: 246 30% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 246 25% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 246 25% 20%;
+    --sidebar-ring: 260 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth dark; /* Add dark class by default */
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overscroll-behavior: none; /* Prevents bounce effect on some browsers */
+    touch-action: manipulation; /* Improves touch response */
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+    word-break: break-word; /* Prevent text from overflowing containers */
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .dark .glass {
+    @apply bg-black/20 border-white/10 shadow-xl;
+  }
+  
+  .glass-border {
+    @apply relative rounded-lg overflow-hidden bg-card border border-primary/20 transition-all hover:border-primary/40;
+  }
+  
+  .dark .glass-border {
+    @apply border-primary/30 hover:border-primary/50 shadow-lg shadow-primary/10;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .dark .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-purple-400 bg-clip-text text-transparent;
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-10 lg:px-20;
+  }
+  
+  .gradient-border {
+    @apply relative border-0 before:absolute before:-inset-[1px] before:rounded-[inherit] before:p-[1px] before:bg-gradient-to-r before:from-primary/50 before:to-accent/50 before:-z-10;
+  }
+  
+  .dark .gradient-border {
+    @apply before:from-primary/70 before:to-accent/70 before:animate-gradient-shift;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .dark .hover-lift {
+    @apply hover:shadow-primary/20;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reveal {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Use more performant cubic-bezier */
+    will-change: opacity, transform; /* Hint to the browser */
+  }
+  
+  .reveal-visible {
+    opacity: 1;
+  }
+  
+  .reveal-up {
+    transform: translateY(30px);
+  }
+  
+  .reveal-down {
+    transform: translateY(-30px);
+  }
+  
+  .reveal-left {
+    transform: translateX(-30px);
+  }
+  
+  .reveal-right {
+    transform: translateX(30px);
+  }
+  
+  .reveal-visible.reveal-up,
+  .reveal-visible.reveal-down,
+  .reveal-visible.reveal-left,
+  .reveal-visible.reveal-right {
+    transform: translate(0);
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animate-wave {
+    animation: wave 15s linear infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Responsive container class */
+  .responsive-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+  }
+
+  /* Mobile-first approach for container width */
+  @media (min-width: 576px) {
+    .responsive-container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .responsive-container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .responsive-container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .responsive-container {
+      max-width: 1140px;
+    }
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+  }
+  33% {
+    transform: scale(1.1) translate(30px, -20px);
+  }
+  66% {
+    transform: scale(0.9) translate(-20px, 30px);
+  }
+  100% {
+    transform: scale(1) translate(0px, 0px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(10px) scaleY(0.8);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (hover: none) {
+  .hover-lift:active {
+    transform: translateY(-1px);
+  }
+  
+  * {
+    transition-duration: 0.15s !important;
+  }
+}
+
+/* Add smooth scrolling for all elements */
+html, body, div, section, article {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix mobile touch handling */
+@media (max-width: 767px) {
+  * {
+    cursor: default !important;
+  }
+  
+  a, button, [role="button"], .clickable {
+    cursor: pointer !important;
+  }
+}
