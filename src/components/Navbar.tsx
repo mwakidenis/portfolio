@@ -94,8 +94,8 @@ const Navbar = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/40 to-purple-500/40 animate-pulse"></div>
             </div>
             <span className="ml-2 font-extrabold tracking-tight text-sm sm:text-base">
-              <span className="text-foreground bg-clip-text">Mark</span>
-              <span className="text-foreground bg-clip-text">Lewis</span>
+              <span className="text-foreground bg-clip-text">Mwaki</span>
+              <span className="text-foreground bg-clip-text">Denis</span>
             </span>
           </div>
         </Link>
