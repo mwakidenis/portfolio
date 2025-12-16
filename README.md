@@ -1,4 +1,4 @@
-# 🚀 Marklewis Mutugi — Developer Portfolio✨😁
+# 🚀 Mwaki Denis — Developer Portfolio✨😁
 
 Welcome to the official repository of my developer portfolio!  
 A modern, sleek, and fully responsive personal website built using **Vite + React + TypeScript**, styled with **Tailwind CSS** and enhanced with **shadcn/ui** components.
@@ -76,13 +76,13 @@ Follow these steps to run the project locally:
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/lewiii254/marklewis-verse-folio.git
+git clone https://github.com/mwakidenis/portfolio.git
 ```
 
 ### Step 2: Navigate to the project folder
 
 ```bash
-cd marklewis-verse-folio
+cd mwakidenis-portfolio
 ```
 
 ### Step 3: Install dependencies
@@ -112,20 +112,20 @@ The site will be available at [http://localhost:5173](http://localhost:5173)
 
 ## 🌐 Live Demo
 
-👉 [Visit My Live Portfolio](https://marklewis-verse-folio.vercel.app/)
+👉 [Visit My Live Portfolio](https://ohmyportfolio.netlify.app/)
 
 ---
 
 ## 📬 Contact
 
 Have feedback or opportunities? Let’s talk!  
-#### [📧 Email:](ngondimarklewis@gmail.com) 
+#### [📧 Email:](mwakidenice@gmail.com) 
 
-#### [💬 WhatsApp:](https://wa.me/254790767347)  
+#### [💬 WhatsApp:](https://wa.me/254798750585)  
 
-#### [🌍 LinkedIn:](https://linkedin.com/in/marklewis-ngondi)  
+#### [🌍 LinkedIn:](https://www.linkedin.com/in/denis-it-54199939a/) 
 
-#### [🐙 GitHub:](https://github.com/lewiii254)
+#### [🐙 GitHub:](https://github.com/mwakidenis)
 
 ---
 
