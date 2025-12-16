@@ -89,7 +89,7 @@ const EducationSection = () => {
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                   <div>
                     <h4 className="text-xl font-bold">High School🏫</h4>
-                    <p className="text-lg text-primary">Nyangwa Secondary School</p>
+                    <p className="text-lg text-primary">Chogoria Boys' High School</p>
                     <p className="mt-2 text-muted-foreground">Focused on Mathematics, Physics, and Computer Studies. Participated in national coding competitions.</p>
                   </div>
                   <div className="text-right md:whitespace-nowrap">
