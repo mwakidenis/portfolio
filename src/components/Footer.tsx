@@ -5,10 +5,10 @@ const Footer = () => {
   const year = new Date().getFullYear();
   
   const socialLinks = [
-    { name: 'GitHub', icon: <Github size={18} />, url: 'https://github.com/lewiii254' },
-    { name: 'LinkedIn', icon: <Linkedin size={18} />, url: 'https://linkedin.com/in/' },
-    { name: 'Twitter', icon: <Twitter size={18} />, url: 'https://x.com/LewiiiTheG' },
-    { name: 'Email', icon: <Mail size={18} />, url: 'mailto:ngondimarklewis@gmail.com' },
+    { name: 'GitHub', icon: <Github size={18} />, url: 'https://github.com/mwakidenis' },
+    { name: 'LinkedIn', icon: <Linkedin size={18} />, url: 'https://www.linkedin.com/in/denis-it-54199939a/' },
+    { name: 'Twitter', icon: <Twitter size={18} />, url: 'https://x.com/Apro5550' },
+    { name: 'Email', icon: <Mail size={18} />, url: 'mailto:mwakidenice@gmail.com' },
   ];
 
   return (
@@ -17,12 +17,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="font-heading font-bold text-xl">
-              <span className="text-gradient">Lewiii Thee G</span>
+              <span className="text-gradient">Denis</span>
             </p>
             <p className="text-sm text-muted-foreground mt-1">
               Creating digital experiences that inspire. <br />
               Passionate about clean code, user-focused design, and impact-driven tech <br />
-              Built by Marklewis Mutugi | Software Engineer & Startup Enthusiast 🚀
+              Built by Mwaki Denis | Software Engineer & Startup Enthusiast 🚀
             </p>
           </div>
           
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {year} Marklewis Mutugi✨. All rights reserved.</p>
+          <p>&copy; {year} Mwaki Denis✨. All rights reserved.</p>
         </div>
       </div>
     </footer>
