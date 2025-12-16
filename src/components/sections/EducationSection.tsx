@@ -93,7 +93,7 @@ const EducationSection = () => {
                     <p className="mt-2 text-muted-foreground">Focused on Mathematics, Physics, and Computer Studies. Participated in national coding competitions.</p>
                   </div>
                   <div className="text-right md:whitespace-nowrap">
-                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">2020 - 2023</span>
+                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">2011 - 2014</span>
                   </div>
                 </div>
               </div>
