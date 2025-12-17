@@ -47,7 +47,7 @@ const projects: Project[] = [
     description: "A modern tourism platform built with React, Node.js, and MongoDB. Features include destination search, category filtering, user authentication, itinerary planning, booking management, and M-Pesa payment integration.",
     imageSrc: "/Tourism.png",
     tags: ["React", "Firebase", "Redux", "Tailwind CSS", "TypeScript"],
-    liveDemoUrl: "https://tembeaafri.netlify.app",
+    liveDemoUrl: "https://https://tembea-africa.pages.dev/",
     githubUrl: "https://github.com/mwakidenis/safaricom-hook-final-project-and-deployment-week-8-mwakidenis.git",
     year: "2023",
     type: "Web App"
