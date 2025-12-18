@@ -41,13 +41,14 @@ const AboutSection = () => {
               </p>
               
               <div className="pt-4">
-                <Button variant="outline" className="gap-2" asChild>
-                  <a href="/cv.pdf" download>
-                    <Download className="h-4 w-4" />
-                    Download CV
-                  </a>
-                </Button>
-              </div>
+  <Button className="gap-2 bg-green-500 hover:bg-green-600 text-white" asChild>
+    <a href="/cv.pdf" download>
+      <Download className="h-4 w-4" />
+      Download CV
+    </a>
+  </Button>
+</div>
+
             </div>
           </ScrollReveal>
         </div>
