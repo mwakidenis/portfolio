@@ -59,7 +59,7 @@ const EducationSection = () => {
       date: "2025", 
       icon: <Award />,
       imageUrl: "/Screenshot 2025-12-19 000720.png",
-      pdfUrl: "/https:/5.0_Professional__Gen_A.I._%2B_Power_BI_Certificate_6783f089_2%20(1).pdf.pdf"
+      pdfUrl: "/5.0_Professional__Gen_A.I._+_Power_BI_Certificate_6783f089_2 (1).pdf"
     }
   ];
 
