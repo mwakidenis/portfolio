@@ -10,7 +10,7 @@ const EducationSection = () => {
       title: "10ALYTICS GLOBAL HACKATHON", 
       issuer: "10Alytics", 
       date: "2025", 
-      icon: <Medal />, <Award />,
+      icon: <Medal />, 
       imageUrl: "/1458242025-12-16.png" 
     },
     { 
