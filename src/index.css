@@ -153,5 +153,4 @@
     @apply before:from-primary/70 before:to-accent/70 before:animate-gradient-shift;
   }
 
-  /* rest of your utilities unchanged... */
 }
