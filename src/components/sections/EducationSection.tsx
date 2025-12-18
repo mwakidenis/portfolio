@@ -51,7 +51,7 @@ const EducationSection = () => {
       { 
       title: "Career Boost with Power  BI and AI", 
       issuer: "Power BI", 
-      date: "2024", 
+      date: "2025", 
       icon: <Award />,
       imageUrl: "/Screenshot 2025-12-19 000720.png"
     }
