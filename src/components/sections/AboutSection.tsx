@@ -41,7 +41,7 @@ const AboutSection = () => {
               </p>
               
               <div className="pt-4">
-  <Button className="gap-2 bg-green-500 hover:bg-green-600 text-white" asChild>
+  <Button className="gap-2 bg-green-500 hover:bg-green-800 text-white" asChild>
     <a href="/cv.pdf" download>
       <Download className="h-4 w-4" />
       Download CV
