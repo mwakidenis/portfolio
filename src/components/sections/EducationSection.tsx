@@ -5,13 +5,21 @@ import { Award, Clipboard, GraduationCap, Medal } from "lucide-react";
 
 const EducationSection = () => {
   const certificates = [
+     { 
+      title: "Career Boost with Power BI and AI", 
+      issuer: "Power BI", 
+      date: "2025", 
+      icon: <Award />,
+      imageUrl: "/Screenshot 2025-12-19 000720.png",
+      pdfUrl: "/5.0_Professional__Gen_A.I._+_Power_BI_Certificate_6783f089_2 (1).pdf"
+    },
     { 
       title: "10ALYTICS GLOBAL HACKATHON", 
       issuer: "10Alytics", 
       date: "2025", 
       icon: <Medal />, 
       imageUrl: "/1458242025-12-16.png",
-      pdfUrl: "/certificates/10Alytics_Global_Hackathon.pdf"
+      pdfUrl: "/certificates/Kaaria_Denis_Hackathon_Certificate(1).pdf"
     },
     { 
       title: "CISCO Get Connected", 
@@ -19,7 +27,7 @@ const EducationSection = () => {
       date: "2024", 
       icon: <Award />,
       imageUrl: "/cisco_2025-12-16 155548.png",
-      pdfUrl: "/certificates/CISCO_Get_Connected.pdf"
+      pdfUrl: "/Adobe Scan Dec 16, 2025 (3).pdf"
     },
     { 
       title: "Responsive Web Design", 
@@ -43,7 +51,7 @@ const EducationSection = () => {
       date: "2019", 
       icon: <Award />,
       imageUrl: "/tuk- 2025-12-16 160557.png",
-      pdfUrl: "/certificates/Annual_Engineering_Students.pdf"
+      pdfUrl: "/Adobe Scan Dec 16, 2025 (4).pdf"
     },
     { 
       title: "Software Engineering Job Simulation", 
@@ -51,15 +59,7 @@ const EducationSection = () => {
       date: "2024", 
       icon: <Medal />,
       imageUrl: "/Screenshot 2025-12-16 155033.png",
-      pdfUrl: "/certificates/Software_Engineering_Job_Simulation.pdf"
-    },
-    { 
-      title: "Career Boost with Power BI and AI", 
-      issuer: "Power BI", 
-      date: "2025", 
-      icon: <Award />,
-      imageUrl: "/Screenshot 2025-12-19 000720.png",
-      pdfUrl: "/5.0_Professional__Gen_A.I._+_Power_BI_Certificate_6783f089_2 (1).pdf"
+      pdfUrl: "a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_68fa7c9cd4e60dd4d4dd7974_1761249350600_completion_certificate(1).pdf"
     }
   ];
 
