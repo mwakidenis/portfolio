@@ -48,7 +48,7 @@ const HeroSection = () => {
             
             <ScrollReveal delay={600} direction="left">
               <p className="text-base md:text-xl text-muted-foreground">
-              I craft intuitive digital solutions that connect real user needs with impactful innovation. With a blend of UI/UX design and full-stack development, I bring bold ideas to life — one line of code at a time. 🚀 <span className="text-primary">✨</span>
+              🎯 On a mission to bridge design & development by fusing UI/UX intuition with full-stack skills 💻. I create products that users love ❤️ and businesses value. 💼 <span className="text-primary">✨</span>
               </p>
             </ScrollReveal>
             
