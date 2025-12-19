@@ -1,4 +1,3 @@
-
 import { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -150,7 +149,11 @@ const Index = () => {
           <Suspense fallback={<SectionSkeleton />}>
             <EducationSection />
           </Suspense>
-          
+
+          <Suspense fallback={<SectionSkeleton />}>
+            <TetrisSection />
+          </Suspense>
+
           <Suspense fallback={<SectionSkeleton />}>
             <ProjectsSection />
           </Suspense>
@@ -161,10 +164,6 @@ const Index = () => {
           
           <Suspense fallback={<SectionSkeleton />}>
             <TestimonialsSection />
-          </Suspense>
-
-          <Suspense fallback={<SectionSkeleton />}>
-            <TetrisSection />
           </Suspense>
 
           <Suspense fallback={<SectionSkeleton />}>
