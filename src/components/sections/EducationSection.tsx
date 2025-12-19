@@ -53,6 +53,14 @@ const EducationSection = () => {
       imageUrl: "/tuk- 2025-12-16 160557.png",
       pdfUrl: "/Adobe Scan Dec 16, 2025 (4).pdf"
     },
+      { 
+      title: "Master Data Analyst(MDA)", 
+      issuer: "10Alytics", 
+      date: "2025", 
+      icon: <Medal />, 
+      imageUrl: "/Screenshot 2025-12-19 134316new.png",
+      pdfUrl: "/data_analytics_final_completetion_cert_04546(1).pdf"
+    },
     { 
       title: "Software Engineering Job Simulation", 
       issuer: "Forage", 
