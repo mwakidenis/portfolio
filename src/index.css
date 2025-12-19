@@ -151,42 +151,4 @@
   .dark .gradient-border {
     @apply before:from-primary/70 before:to-accent/70 before:animate-gradient-shift;
   }
-
-  /* =================== */
-  /* Tetris Game CSS */
-  /* =================== */
-
-  #root {
-    @apply text-center relative;
-  }
-
-  #root h1 {
-    margin: 0 10% 0 0;
-    padding: 5px 0;
-    color: var(--foreground);
-  }
-
-  #root canvas {
-    @apply block mx-auto border-4 border-white bg-black;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-  }
-
-  /* Overlay text for pause or game over */
-  .tetris-overlay {
-    @apply absolute inset-0 flex items-center justify-center bg-black/80 text-red-500 text-xl font-mono font-bold;
-  }
-
-  /* Scoreboard */
-  .scoreboard {
-    @apply flex justify-between mb-2 text-white font-mono text-lg;
-    width: 300px;
-    margin: 0 auto 10px auto;
-  }
-
-  /* Game container */
-  .tetris-game-container {
-    @apply relative flex flex-col justify-center items-center h-full;
-  }
 }
