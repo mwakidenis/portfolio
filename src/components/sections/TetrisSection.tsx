@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -21,10 +21,12 @@ class Controller {
   #view;
   #dropTimerId = null;
   #isPlaying = false;
+  #onGameStateChange;
 
-  constructor(game, view) {
+  constructor(game, view, onGameStateChange) {
     this.#game = game;
     this.#view = view;
+    this.#onGameStateChange = onGameStateChange;
 
     this.#initializeEventListeners();
     this.#view.renderStartScreen();
@@ -143,6 +145,7 @@ class Controller {
     } else {
       this.#play();
     }
+    this.#onGameStateChange(this.#isPlaying);
   }
 }
 
@@ -635,12 +638,41 @@ class View {
 
 const TetrisSection = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
+  const [isGamePlaying, setIsGamePlaying] = useState(false);
+
+  const handleGameStateChange = (playing: boolean) => {
+    setIsGamePlaying(playing);
+  };
+
+  useEffect(() => {
+    const preventScroll = (e: WheelEvent) => {
+      if (isGamePlaying) {
+        e.preventDefault();
+      }
+    };
+
+    const preventKeyScroll = (e: KeyboardEvent) => {
+      if (isGamePlaying && (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageUp' || e.key === 'PageDown' || e.key === 'Home' || e.key === 'End')) {
+        e.preventDefault();
+      }
+    };
+
+    if (isGamePlaying) {
+      document.addEventListener('wheel', preventScroll, { passive: false });
+      document.addEventListener('keydown', preventKeyScroll);
+    }
+
+    return () => {
+      document.removeEventListener('wheel', preventScroll);
+      document.removeEventListener('keydown', preventKeyScroll);
+    };
+  }, [isGamePlaying]);
 
   useEffect(() => {
     if (canvasRef.current) {
       const game = new Game();
       const view = new View(canvasRef.current, 480, 640, 20, 10);
-      const controller = new Controller(game, view);
+      const controller = new Controller(game, view, handleGameStateChange);
     }
   }, []);
 
