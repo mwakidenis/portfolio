@@ -70,6 +70,7 @@ const CertificateCard = ({
             href={certificateLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()} // prevents triggering any loader
             className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-primary text-background font-semibold rounded-lg hover:bg-primary/90 transition-colors whitespace-nowrap self-start"
           >
             View Certificate
