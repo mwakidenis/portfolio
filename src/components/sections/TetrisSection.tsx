@@ -696,6 +696,7 @@ const TetrisSection = () => {
           </div>
           <div className="text-center mt-4 text-sm text-muted-foreground">
             <p>Controls: ← → ↓ for movement, ↑ to rotate, Enter/Space to start/pause</p>
+            <p className="mt-2">Quick Guide: Use arrow keys to move and rotate pieces. Press Enter or Space to start/pause the game. Pausing the game allows you to scroll the page again.</p>
           </div>
         </ScrollReveal>
       </div>
