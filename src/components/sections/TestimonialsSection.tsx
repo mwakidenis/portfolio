@@ -13,12 +13,12 @@ import {
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      content: "Working with Mwaki Denis was a game-changer for our startup. His technical skills combined with his eye for design helped us create a product that our users love. Can't recommend him enough! 🚀",
+      content: "Working with Denis was a game-changer for our startup. His technical skills combined with his eye for design helped us create a product that our users love. Can't recommend him enough! 🚀",
       author: "Sarah Kimani",
       role: "CEO, TechStart"
     },
     {
-      content: "Mwaki Denis is has a rare ability to translate complex technical requirements into beautiful, intuitive interfaces. He's a true professional who delivers exceptional results. A joy to work with! ✨",
+      content: "Mwaki Denis has a rare ability to translate complex technical requirements into beautiful, intuitive interfaces. He's a true professional who delivers exceptional results. A joy to work with! ✨",
       author: "David Kaje",
       role: "Product Manager, InnovateCorp"
     },
