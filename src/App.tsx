@@ -28,14 +28,14 @@ const App = () => {
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          {/* Wrapper that prevents horizontal overflow */}
+          {/* Outer wrapper preventing overflow */}
           <div className="w-full max-w-full overflow-x-hidden relative">
             <Toaster />
             <Sonner />
             <BrowserRouter>
               <ChatProvider>
-                {/* Optional: Use a responsive container to avoid any extra overflow */}
-                <div className="w-full max-w-[100vw] mx-auto">
+                {/* Responsive container: prevents any child element from exceeding viewport */}
+                <div className="w-full max-w-[100vw] mx-auto px-4 sm:px-6 lg:px-8">
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/blog" element={<Blog />} />
