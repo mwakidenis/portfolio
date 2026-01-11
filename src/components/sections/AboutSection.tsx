@@ -19,7 +19,7 @@ const AboutSection = () => {
           <ScrollReveal direction="left">
             <div className="glass rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" 
+                src="https://github.com/Adam-pw/Adam-pw/blob/main/animation_500_kxa883sd.gif" 
                 alt="Developer coding on computer"
                 className="w-full h-auto"
                 loading="lazy"
