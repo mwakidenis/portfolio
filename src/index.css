@@ -87,9 +87,10 @@
   }
 
   /* Global resets */
-  * {
+  *, *::before, *::after {
     @apply border-border;
     box-sizing: border-box;
+    max-width: 100vw; /* prevent horizontal overflow */
   }
 
   html {
@@ -98,7 +99,7 @@
     -webkit-overflow-scrolling: touch;
     -webkit-tap-highlight-color: transparent;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* critical for horizontal scroll */
   }
 
   body {
@@ -108,7 +109,7 @@
     position: relative;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* critical for horizontal scroll */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -161,6 +162,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+    overflow-x: hidden; /* new: prevent container from overflowing */
   }
 
   @media (min-width: 576px) { .responsive-container { max-width: 540px; } }
