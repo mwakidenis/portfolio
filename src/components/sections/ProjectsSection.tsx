@@ -33,7 +33,7 @@ const projects: Project[] = [
 {
     id: "1",
     title: "Mpesa-Based Wi-Fi Hotspot Billing System 🧾",
-    description: "A Wi-Fi hotspot billing system with M-Pesa STK Push, Okoa Internet option, time-based access, MikroTik control, real-time monitoring, and a web-based admin dashboard.",
+    description: "A Wi-Fi hotspot billing system with M-Pesa STK Push, Okoa Internet option, time-based access, MikroTik control(MikroTik RB750UPr2), real-time monitoring, and a web-based admin dashboard.",
     imageSrc: "/JobPortal.png", 
     tags: ["React", "Node.js", "Next.js", "MySQL", "Prisma", "M-Pesa", "MikroTik"],
     liveDemoUrl: "https://anotherone-production-dcdb.up.railway.app", // live demo URL
