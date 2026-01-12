@@ -40,7 +40,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/mwakidenis/Mpesa-Based_Wi-Fi-Hotspot_Billing_System", 
     year: "2026",
     type: "Web App"
-}
+},
   {
     id: "2",
     title: "Tembea Afrika 🌍✈️",
