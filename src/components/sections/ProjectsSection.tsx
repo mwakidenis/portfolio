@@ -31,7 +31,7 @@ type Project = {
 // Create projects data
 const projects: Project[] = [
 {
-    id: "2",
+    id: "1",
     title: "Mpesa-Based Wi-Fi Hotspot Billing System 🧾",
     description: "A fast, automated Hotspot Billing system powered by M-Pesa STK Push for instant, secure user access. Built with Node.js, MySQL, Next.js, and React, with optional MikroTik integration.",
     imageSrc: "/JobPortal.png", 
